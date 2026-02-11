@@ -28,7 +28,7 @@
     <div id="mapa" style="height: 500px; margin: 30px 0; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);"></div>
 
     <script>
-      var map = L.map('mapa').setView([19.4326, -99.1332], 5); // Centro en CDMX, ajusta zoom
+      var map = L.map('mapa').setView([18.504694, -98.754111], 5); // Centro en CDMX, ajusta zoom
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -36,9 +36,9 @@
 
       // Agrega tus lugares aquí (lat, lng, nombre, descripción)
       const lugares = [
-        { lat: 19.4326, lng: -99.1332, nombre: "Donde nos conocimos", desc: "El lugar donde todo empezó 💕" },
-        { lat: 20.6597, lng: -87.0731, nombre: "Playa del Carmen", desc: "Nuestro primer viaje juntos 🏖️" },
-        { lat: 19.7016, lng: -99.2044, nombre: "Nuestro restaurante favorito", desc: "Donde siempre pedimos lo mismo 😋" }
+        { lat: 18.504694, lng: -98.754111, nombre: "Donde formalizamos nuestra relación", desc: "El lugar donde todo empezó" },
+        { lat: 19.4847139, lng: -99.1178511, nombre: "La Basilica de Guadalupe", desc: "Nuestra primera visita a este lugar sagrado 🙏" },
+        { lat: 18.506944, lng: -98.751722, nombre: "Tu lugar favorito", desc: "Tu segunda casa, tu lugar favorito" }
       ];
 
       lugares.forEach(lugar => {
