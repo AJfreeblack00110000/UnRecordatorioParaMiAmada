@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestros Lugares 🗺️</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <nav>
+    <!-- misma nav -->
+  </nav>
+
+  <main>
+    <h1>Nuestros Lugares Especiales 🌍</h1>
+    <p>Estos son algunos de los sitios donde hemos creado recuerdos inolvidables.</p>
+
+    <div id="mapa" style="height: 500px; margin: 30px 0; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);"></div>
+
+    <script>
+      var map = L.map('mapa').setView([19.4326, -99.1332], 5); // Centro en CDMX, ajusta zoom
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+      // Agrega tus lugares aquí (lat, lng, nombre, descripción)
+      const lugares = [
+        { lat: 19.4326, lng: -99.1332, nombre: "Donde nos conocimos", desc: "El lugar donde todo empezó 💕" },
+        { lat: 20.6597, lng: -87.0731, nombre: "Playa del Carmen", desc: "Nuestro primer viaje juntos 🏖️" },
+        { lat: 19.7016, lng: -99.2044, nombre: "Nuestro restaurante favorito", desc: "Donde siempre pedimos lo mismo 😋" }
+      ];
+
+      lugares.forEach(lugar => {
+        L.marker([lugar.lat, lugar.lng])
+          .addTo(map)
+          .bindPopup(`<b>${lugar.nombre}</b><br>${lugar.desc}`);
+      });
+    </script>
+  </main>
+</body>
+</html>

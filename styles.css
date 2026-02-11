@@ -92,3 +92,79 @@ h1 {
   nav ul { flex-direction: column; gap: 10px; }
   main { margin: 100px 10px 20px; }
 }
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.galeria-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.05);
+}
+
+.playlist {
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+.cancion {
+  margin-bottom: 35px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.cancion h3 {
+  margin: 0 0 15px;
+  color: #e91e63;
+}
+
+#mapa {
+  border: 4px solid #fff;
+}
+
+.calendario {
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+.evento {
+  display: flex;
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.fecha {
+  background: #e91e63;
+  color: white;
+  padding: 20px 25px;
+  font-weight: bold;
+  min-width: 140px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido {
+  padding: 20px;
+  flex: 1;
+}
+
+.contenido h3 {
+  margin: 0 0 10px;
+  color: #e91e63;
+}
