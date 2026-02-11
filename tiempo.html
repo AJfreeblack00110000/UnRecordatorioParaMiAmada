@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestro Tiempo ⏳</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="cartas.html">Cartas Diarias</a></li>
+      <li><a href="tiempo.html">Nuestro Tiempo</a></li>
+      <li><a href="#">Más (próximamente)</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Nuestro Tiempo Juntos ❤️</h1>
+    <p>Hemos estado juntos: <span id="tiempo-juntos"></span></p>
+
+    <h2>Cronograma de Nuestros Momentos Hito</h2>
+    <ul class="timeline">
+      <li><span>2020-01-01:</span> Nuestro primer encuentro ✨</li>
+      <li><span>2020-02-14:</span> Primer San Valentín juntos 💕</li>
+      <li><span>2021-01-01:</span> Primer aniversario 🎉</li>
+      <li><span>2023-06-15:</span> Viaje inolvidable a la playa 🏖️</li>
+      <!-- Agrega más hitos aquí con fechas reales -->
+    </ul>
+  </main>
+
+  <script>
+    const fechaInicio = new Date('2020-01-01'); // Cambia por la fecha real de cuando empezaron
+    const hoy = new Date();
+    const diff = hoy - fechaInicio;
+    const años = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+    const meses = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+    const dias = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+    document.getElementById('tiempo-juntos').textContent = `${años} años, ${meses} meses y ${dias} días.`;
+  </script>
+</body>
+</html>
