@@ -1,147 +1,168 @@
-body {
+/* Reset básico y tipografía */
+* {
   margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   color: #333;
   line-height: 1.6;
+  min-height: 100vh;
 }
 
+/* Navegación responsiva */
 nav {
   background: #e91e63;
-  padding: 15px;
-  position: fixed;
+  padding: 1rem;
+  position: sticky;
   top: 0;
-  width: 100%;
-  z-index: 10;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
 
 nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s;
 }
 
 nav a:hover {
   color: #ffd600;
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
 }
 
+/* Contenido principal */
 main {
-  max-width: 800px;
-  margin: 80px auto 40px;
-  padding: 20px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-width: 1000px;
+  margin: 5rem auto 3rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
   text-align: center;
 }
 
 h1 {
   color: #e91e63;
-  font-size: 2.5em;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  margin-bottom: 1.5rem;
 }
 
+h2, h3 {
+  color: #c2185b;
+}
+
+/* Frase diaria */
 .frase-diaria {
-  font-size: 1.5em;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
   font-style: italic;
-  color: #555;
+  color: #444;
+  margin: 2rem 0;
 }
 
+/* Cartas */
 .cartas-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
 
 .carta {
   background: #fff0f5;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 1.5rem;
+  border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.timeline {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-}
-
-.timeline li {
-  margin: 15px 0;
-  padding: 10px;
-  background: #fff0f5;
-  border-left: 5px solid #e91e63;
-}
-
-.timeline span {
-  font-weight: bold;
-  color: #e91e63;
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-  nav ul { flex-direction: column; gap: 10px; }
-  main { margin: 100px 10px 20px; }
-}
-
+/* Galería */
 .galeria-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 15px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
 }
 
 .galeria-grid img {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
 }
 
 .galeria-grid img:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
+/* Timeline */
+.timeline {
+  list-style: none;
+  padding: 0 1rem;
+  text-align: left;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.timeline li {
+  margin: 1.2rem 0;
+  padding: 1rem;
+  background: #fff0f5;
+  border-left: 5px solid #e91e63;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Playlist */
 .playlist {
-  max-width: 700px;
-  margin: 40px auto;
+  max-width: 800px;
+  margin: 2.5rem auto;
 }
 
 .cancion {
-  margin-bottom: 35px;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 20px;
+  margin-bottom: 2.5rem;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 1.5rem;
   border-radius: 12px;
 }
 
-.cancion h3 {
-  margin: 0 0 15px;
-  color: #e91e63;
-}
-
+/* Mapa */
 #mapa {
-  border: 4px solid #fff;
+  height: 60vh;
+  min-height: 400px;
+  margin: 2rem 0;
+  border-radius: 12px;
+  border: 4px solid white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
+/* Calendario / Eventos */
 .calendario {
-  max-width: 700px;
-  margin: 40px auto;
+  max-width: 800px;
+  margin: 2.5rem auto;
 }
 
 .evento {
   display: flex;
-  margin-bottom: 25px;
-  background: rgba(255, 255, 255, 0.7);
+  flex-direction: column;
+  margin-bottom: 1.8rem;
+  background: rgba(255, 255, 255, 0.75);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -150,21 +171,64 @@ h1 {
 .fecha {
   background: #e91e63;
   color: white;
-  padding: 20px 25px;
+  padding: 1.2rem;
   font-weight: bold;
-  min-width: 140px;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 1.1rem;
 }
 
 .contenido {
-  padding: 20px;
-  flex: 1;
+  padding: 1.5rem;
 }
 
-.contenido h3 {
-  margin: 0 0 10px;
-  color: #e91e63;
+/* Media Queries - Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  nav a {
+    font-size: 1.05rem;
+    padding: 0.8rem;
+  }
+
+  main {
+    margin: 4rem 1rem 2rem;
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+  }
+
+  .evento {
+    flex-direction: column;
+  }
+
+  .fecha {
+    border-radius: 12px 12px 0 0;
+  }
+
+  #mapa {
+    height: 50vh;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cartas-container,
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .frase-diaria {
+    font-size: 1.3rem;
+    padding: 0 1rem;
+  }
+
+  nav {
+    padding: 0.8rem;
+  }
 }
